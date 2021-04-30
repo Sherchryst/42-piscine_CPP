@@ -7,9 +7,9 @@ _Orange=\033[1;96m        # Blue
 _Purple=\033[1;35m
 
 # FILES
-NAME	=
+NAME	= phonebook
 
-SRC		=
+SRC		= main.cpp
 
 # COMPILATION
 CC		= clang++

@@ -17,13 +17,7 @@ CFLAGS	= -Wall -Werror -Wextra -std=c++98
 
 $(NAME): $(SRC)
 	@$(CC) $(CFLAGS) $(SRC) -o $(NAME)
-	@echo ""
-	@echo "${_GREEN}The executable file of ${Color_Off}${_Orange}"
-	@echo " ____ _  _ ___   ___  "
-	@echo "( ___( \/ / _ \ / _ \ "
-	@echo " )__) )  ( (_) ( (_) )"
-	@echo "(____(_/\_\___/ \___/ ${Color_Off}"
-	@echo "     ${_GREEN}Has been created!${Color_Off}"
+	@echo "${_GREEN}The executable file of MEGAPHONE Has been created!${Color_Off}"
 
 
 all: $(NAME)

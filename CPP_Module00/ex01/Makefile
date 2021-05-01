@@ -17,6 +17,7 @@ NAME	= phonebook
 
 SRC		= main.cpp \
 		  contact.cpp \
+		  book.cpp
 
 DEP             := $(SRC:%.cpp=$(BUILD)/%.d)                                      
 OBJ             := $(SRC:%.cpp=$(BUILD)/%.o)

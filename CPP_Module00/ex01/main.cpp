@@ -6,16 +6,16 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/01 00:48:32 by sgah              #+#    #+#             */
-/*   Updated: 2021/05/01 14:34:13 by sgah             ###   ########.fr       */
+/*   Updated: 2021/05/01 21:46:24 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include "contact.hpp"
+#include "book.hpp"
 
 int main()
 {
-	Contact ct;
+	Book db;
 	std::string cmd;
 
 	cmd = "";
@@ -31,6 +31,19 @@ int main()
 		if (!std::cin.good())
 			return (1);
 		if (cmd.compare("ADD") == 0)
+		{
+			if (db.getcount() >= 8)
+			{
+				std::cout << "Error: I TOLD YOU IS REALLY BAD"
+				<< ". The phonebook is full: 8 contact max"
+				<< std::endl;
+				continue ;
+			}
+
+			Contact ct;
+
 			ct.addcontact();
+			db.setcontact(ct);
+		}
 	}
 }

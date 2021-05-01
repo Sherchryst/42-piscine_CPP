@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/01 15:11:31 by sgah              #+#    #+#             */
-/*   Updated: 2021/05/01 21:46:39 by sgah             ###   ########.fr       */
+/*   Updated: 2021/05/02 00:28:22 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,9 @@ class Book {
 
 		void	setcontact(Contact newcontact);
 		int	getcount(void) const;
+		void	displayfield(std::string field) const;
+		void	list(void);
+
 	private:
 		int		_count;
 		Contact	_contact[COUNT];

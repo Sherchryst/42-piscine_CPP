@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/01 00:48:32 by sgah              #+#    #+#             */
-/*   Updated: 2021/05/01 21:46:24 by sgah             ###   ########.fr       */
+/*   Updated: 2021/05/02 00:27:51 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ int main()
 
 		if (!std::cin.good())
 			return (1);
+
 		if (cmd.compare("ADD") == 0)
 		{
 			if (db.getcount() >= 8)
@@ -44,6 +45,11 @@ int main()
 
 			ct.addcontact();
 			db.setcontact(ct);
+		}
+
+		if (cmd.compare("SEARCH") == 0)
+		{
+			db.list();
 		}
 	}
 }

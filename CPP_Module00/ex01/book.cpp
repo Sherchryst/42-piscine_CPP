@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/01 16:42:15 by sgah              #+#    #+#             */
-/*   Updated: 2021/05/02 00:42:27 by sgah             ###   ########.fr       */
+/*   Updated: 2021/05/02 00:47:31 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	Book::list(void)
 	this->displayfield("Last Name");
 	this->displayfield("Nickname");
 	std::cout << std::endl << std::setw(10) << std::setfill(' ');
-	std::cout<< std::setw(40) << std::setfill('-') << "-";
+	std::cout<< std::setw(40) << std::setfill('-');
 	
 	for(int i = 0; i < _count; i++)
 	{
@@ -57,7 +57,7 @@ void	Book::list(void)
 		this->displayfield(ct.getfield(1));
 		this->displayfield(ct.getfield(2));
 		std::cout << std::endl << std::setw(10) << std::setfill(' ');
-		std::cout << std::setw(40) << std::setfill('-') << "-";
+		std::cout << std::setw(40) << std::setfill('-');
 	}
 	std::cout << std::endl;
 }

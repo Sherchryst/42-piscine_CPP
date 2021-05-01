@@ -6,28 +6,52 @@ BRed=\033[1;31m"         # Red
 _Orange=\033[1;96m        # Blue
 _Purple=\033[1;35m
 
+# DIRECTORIES
+
+BUILD	= .build
+SRC_DIR	= ./
+INC		= -I./
+
 # FILES
 NAME	= phonebook
 
-SRC		= main.cpp
+SRC		= main.cpp \
+		  contact.cpp \
+
+DEP             := $(SRC:%.cpp=$(BUILD)/%.d)                                      
+OBJ             := $(SRC:%.cpp=$(BUILD)/%.o)
 
 # COMPILATION
 CC		= clang++
 CFLAGS	= -Wall -Werror -Wextra -std=c++98
+DFLAGS  = -MP -MMD
 
-$(NAME): $(SRC)
-	@$(CC) $(CFLAGS) $(SRC) -o $(NAME)
+$(NAME): $(OBJ)
+	@$(CC) $(OBJ) -o $(NAME)
 	@echo "${_GREEN}The executable file of PHONEBOOK Has been created!${Color_Off}"
 
 
 all: $(NAME)
 
-clean: fclean
+clean:
+	@rm -rf $(BUILD)
+	@echo "\033[1;34mExecute:\t\033[1;33mCleaning build\t\033[0;32m[OK]\033[0m"
 
-fclean:
+fclean: clean
 	@rm -f $(NAME)
 	@echo "\033[1;34mExecute:\t\033[1;33mCleaning exec\t\033[0;32m[OK]\033[0m"
 
 re: fclean all
+
+$(BUILD):
+	@echo "\033[1;32m\nCreation of .build\033[0m \n"
+	@mkdir $@
+
+$(BUILD)/%.o: $(SRC_DIR)%.cpp | $(BUILD)
+	@printf "\033[1;34mExecute: \t\033[1;33mCompilation of \033[1;36m$(notdir $<) \033[0m \
+	%-33.33s\r"
+	@$(CC) $(CFLAGS) $(DFLAGS) -c $< -o $@ $(INC)
+
+-include $(DEP)
 
 .PHONY: all clean fclean re

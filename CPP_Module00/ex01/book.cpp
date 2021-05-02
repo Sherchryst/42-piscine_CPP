@@ -6,11 +6,11 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/01 16:42:15 by sgah              #+#    #+#             */
-/*   Updated: 2021/05/02 00:47:31 by sgah             ###   ########.fr       */
+/*   Updated: 2021/05/02 02:06:40 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string>
+#include <sstream>
 #include "book.hpp"
 
 Book::Book(void) : _count(0) {}
@@ -31,7 +31,7 @@ void	Book::setcontact(Contact newcontact)
 void	Book::displayfield(std::string field) const
 {
 	if (field.size() > 10)
-		std::cout << std::setw(9) << field << ".";
+		std::cout << std::setw(9) << field.substr(0, 9) << ".";
 	else
 		std::cout << std::setw(10) << field;
 	std::cout << "|";
@@ -44,20 +44,17 @@ void	Book::list(void)
 	this->displayfield("First Name");
 	this->displayfield("Last Name");
 	this->displayfield("Nickname");
-	std::cout << std::endl << std::setw(10) << std::setfill(' ');
-	std::cout<< std::setw(40) << std::setfill('-');
-	
+	std::cout << std::endl;	
 	for(int i = 0; i < _count; i++)
 	{
 		Contact ct = this->_contact[i];
 
 		std::cout << std::setw(10) << std::setfill(' ') << "|";
-		this->displayfield(std::to_string(i));
+		this->displayfield(static_cast<std::ostringstream*>( &(std::ostringstream() << i + 1) )->str());
 		this->displayfield(ct.getfield(0));
 		this->displayfield(ct.getfield(1));
 		this->displayfield(ct.getfield(2));
-		std::cout << std::endl << std::setw(10) << std::setfill(' ');
-		std::cout << std::setw(40) << std::setfill('-');
+		std::cout << std::endl;
 	}
 	std::cout << std::endl;
 }

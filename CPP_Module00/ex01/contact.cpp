@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/01 12:12:54 by sgah              #+#    #+#             */
-/*   Updated: 2021/05/02 00:32:02 by sgah             ###   ########.fr       */
+/*   Updated: 2021/05/02 17:38:13 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,11 @@ std::string Contact::_name_field[FIELD_COUNT] = {
 	"Underwear color",
 	"Darkest secret"
 };
+
+std::string	Contact::getnamefield(int i) const
+{
+	return this->_name_field[i];
+}
 
 std::string	Contact::getfield(int i) const
 {

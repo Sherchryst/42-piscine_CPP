@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/01 11:42:02 by sgah              #+#    #+#             */
-/*   Updated: 2021/05/02 00:29:38 by sgah             ###   ########.fr       */
+/*   Updated: 2021/05/02 17:40:09 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ class Contact {
 		~Contact(void);
 		
 		std::string	getfield(int i) const;
+		std::string	getnamefield(int i) const;
 		void		setfield(int i, std::string value);
 		void		addcontact(void);
 

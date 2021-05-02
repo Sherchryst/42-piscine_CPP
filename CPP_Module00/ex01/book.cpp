@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/01 16:42:15 by sgah              #+#    #+#             */
-/*   Updated: 2021/05/02 02:06:40 by sgah             ###   ########.fr       */
+/*   Updated: 2021/05/02 17:43:00 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,11 @@ Book::~Book(void) {}
 int	Book::getcount(void) const
 {
 	return this->_count;
+}
+
+Contact	Book::getcontact(int i) const
+{
+	return this->_contact[i];
 }
 
 void	Book::setcontact(Contact newcontact)

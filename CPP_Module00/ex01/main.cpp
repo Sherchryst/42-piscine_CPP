@@ -6,11 +6,11 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/01 00:48:32 by sgah              #+#    #+#             */
-/*   Updated: 2021/05/02 00:27:51 by sgah             ###   ########.fr       */
+/*   Updated: 2021/05/02 18:19:07 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#include <sstream>
 #include "book.hpp"
 
 int main()
@@ -29,7 +29,7 @@ int main()
 		getline(std::cin, cmd);
 
 		if (!std::cin.good())
-			return (1);
+			continue ;
 
 		if (cmd.compare("ADD") == 0)
 		{
@@ -50,6 +50,32 @@ int main()
 		if (cmd.compare("SEARCH") == 0)
 		{
 			db.list();
+
+			if (db.getcount() == 0)
+				continue ;
+			std::cout << "type in the contact index: ";
+			int index;
+
+			std::getline(std::cin, cmd);
+
+			if (!std::cin.good())
+				continue ;   
+
+
+			std::istringstream iss(cmd);
+  			iss >> index;
+
+			if (index <= 0 || index > db.getcount())
+				continue ;
+			Contact c;
+
+			c = db.getcontact(index - 1);
+			for (int i = 0; i < FIELD_COUNT; i++)
+			{
+				std::cout << std::setw(10) << std::setfill(' ') << " ";
+				std::cout << c.getnamefield(i) << ": " << c.getfield(i)
+				<< std::endl;
+			}
 		}
 	}
 }

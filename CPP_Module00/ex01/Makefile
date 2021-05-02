@@ -45,7 +45,7 @@ fclean: clean
 re: fclean all
 
 $(BUILD):
-	@echo "\033[1;32m\nCreation of .build\033[0m \n"
+	@echo "\033[1;32m\nCreation of .build\033[0m"
 	@mkdir $@
 
 $(BUILD)/%.o: $(SRC_DIR)%.cpp | $(BUILD)

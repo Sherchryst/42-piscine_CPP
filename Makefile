@@ -13,10 +13,9 @@ SRC_DIR	= ./
 INC		= -I./
 
 # FILES
-NAME	= phonebook
+NAME	= 
 
-SRC		= main.cpp \
-		  contact.cpp \
+SRC		= 
 
 DEP             := $(SRC:%.cpp=$(BUILD)/%.d)                                      
 OBJ             := $(SRC:%.cpp=$(BUILD)/%.o)
@@ -28,7 +27,7 @@ DFLAGS  = -MP -MMD
 
 $(NAME): $(OBJ)
 	@$(CC) $(OBJ) -o $(NAME)
-	@echo "${_GREEN}The executable file of PHONEBOOK Has been created!${Color_Off}"
+	@echo "${_GREEN}The executable file of /*HERE $NAME*/ Has been created!${Color_Off}"
 
 
 all: $(NAME)

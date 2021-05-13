@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/12 22:31:23 by sgah              #+#    #+#             */
-/*   Updated: 2021/05/13 16:13:54 by sgah             ###   ########.fr       */
+/*   Updated: 2021/05/13 16:20:44 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,8 @@ Fixed::Fixed(float const value)
 Fixed::Fixed(Fixed const &src)
 {
 	std::cout << "Copy constructor called" << std::endl;
-	this->_value = src.getRawBits();
+
+	*this = src;
 }
 
 Fixed::~Fixed(void)

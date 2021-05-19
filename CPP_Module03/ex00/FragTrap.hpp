@@ -6,7 +6,7 @@
 /*   By: sgah <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 15:29:32 by sgah              #+#    #+#             */
-/*   Updated: 2021/05/18 16:08:45 by sgah             ###   ########.fr       */
+/*   Updated: 2021/05/19 19:49:53 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,18 @@ class FragTrap {
 
 	public:
 
-		FragTrap(void);
+		FragTrap(std::string Name);
 
 		FragTrap(FragTrap const & src);
 		~FragTrap(void);
 		
-		void	Ranged
+		void	rangedAttack(std::string const & target) const;
+		void	meleeAttack(std::string const & target) const;
+		void	takeDamage(unsigned int amount);
+		void	beRepaired(unsigned int amount);
 
 	private:
-		int	_hitPoints;
+		int	_hitPoint;
 		int	_maxHitPoints;
 		int	_energyPoints;
 		int	_maxEnergyPoints;

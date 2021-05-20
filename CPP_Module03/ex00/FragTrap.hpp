@@ -6,7 +6,7 @@
 /*   By: sgah <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 15:29:32 by sgah              #+#    #+#             */
-/*   Updated: 2021/05/19 19:49:53 by sgah             ###   ########.fr       */
+/*   Updated: 2021/05/20 01:31:41 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define FRAGTRAP_H
 
 # include <iostream>
+# include  <cstdlib>
 
 class FragTrap {
 
@@ -23,22 +24,33 @@ class FragTrap {
 
 		FragTrap(FragTrap const & src);
 		~FragTrap(void);
+
+		int	getHP(void) const;
+		int	getEP(void) const;
 		
-		void	rangedAttack(std::string const & target) const;
-		void	meleeAttack(std::string const & target) const;
+		std::string	getName(void) const;
+
+		void	levelUp(void);
+		
+		void	rangedAttack(std::string const & target);
+		void	meleeAttack(std::string const & target);
 		void	takeDamage(unsigned int amount);
 		void	beRepaired(unsigned int amount);
+
+		void 	vaulthunter_dot_exe(std::string const & target);
 
 	private:
 		int	_hitPoint;
 		int	_maxHitPoints;
 		int	_energyPoints;
 		int	_maxEnergyPoints;
-		int	_Level;
+		int	_level;
 		std::string	_name;
 		int	_meleeAttackDamage;
 		int	_rangedAttackDamage;
-		int	_amorDamageReduction;
+		int	_armorDamageReduction;
+
+		static std::string _vaulthunterQuotes[5];
 
 };
 

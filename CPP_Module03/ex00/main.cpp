@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 00:23:01 by sgah              #+#    #+#             */
-/*   Updated: 2021/05/20 02:13:24 by sgah             ###   ########.fr       */
+/*   Updated: 2021/05/21 20:17:51 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int main(void)
 			std::getline(std::cin, input);
 			if(!input.compare("heal"))
 			{
-				p1->beRepaired(10);
+				p1->beRepaired(30);
 				break;
 			}
 			if(!input.compare("sword"))
@@ -66,7 +66,7 @@ int main(void)
 			if(!input.compare("berzerk"))
 			{
 				if(p1->getEP() >= 25)	
-					p2->takeDamage(20);
+					p2->takeDamage(50);
 				p1->vaulthunter_dot_exe(p2->getName());
 				break;
 			}
@@ -80,7 +80,7 @@ int main(void)
 		        std::getline(std::cin, input);
 		        if(!input.compare("heal"))
 			{
-		                p2->beRepaired(10);
+		                p2->beRepaired(30);
 				break;
 			}
 		        if(!input.compare("sword"))
@@ -100,7 +100,7 @@ int main(void)
 		        if(!input.compare("berzerk"))
 		        {
 				if(p2->getEP() >= 25)	
-		                	p1->takeDamage(20);
+		                	p1->takeDamage(50);
 		                p2->vaulthunter_dot_exe(p1->getName());
 				break;
 		        }

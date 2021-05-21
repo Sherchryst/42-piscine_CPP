@@ -6,7 +6,7 @@
 /*   By: sgah <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 15:29:32 by sgah              #+#    #+#             */
-/*   Updated: 2021/05/20 01:31:30 by sgah             ###   ########.fr       */
+/*   Updated: 2021/05/21 20:18:55 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,11 @@ FragTrap::FragTrap(std::string Name):
 	std::cout<<"<"<<this->_name<<"> is Ready to fight!"<<std::endl;
 }
 
-FragTrap::FragTrap(FragTrap const & src)
+FragTrap::FragTrap(FragTrap const & rhs):
+	_hitPoint(rhs._hitPoint), _maxHitPoints(rhs._maxHitPoints), _energyPoints(rhs._energyPoints), _maxEnergyPoints(rhs._maxEnergyPoints),
+	_level(rhs._level), _name(rhs._name), _meleeAttackDamage(rhs._meleeAttackDamage), _rangedAttackDamage(rhs._rangedAttackDamage),
+	_armorDamageReduction(rhs._armorDamageReduction)
 {
-	*this = src;
 	std::cout<<"<"<<this->_name<<"> is Ready to fight!"<<std::endl;
 }
 
@@ -57,7 +59,7 @@ void	FragTrap::rangedAttack(std::string const & target)
 	if (this->_energyPoints >= 30)
 	{
 		this->_energyPoints -= 30;
-		std::cout << "<" << this->_name << "> Use Mega Blaster(Ranged Attack) *PIIOOOUUU " << "<"
+		std::cout << "<" << this->_name << "> Used Mega Blaster(Ranged Attack) *PIIOOOUUU* " << "<"
 		<< target << "> got shoot *BOOM*" << std::endl << "{<" << target
 		<< "> recieved " << this->_rangedAttackDamage - this->_armorDamageReduction << " damage points}"<<std::endl;
 	}
@@ -70,7 +72,7 @@ void	FragTrap::meleeAttack(std::string const & target)
 	if (this->_energyPoints >= 20)
 	{
 		this->_energyPoints -= 20;
-		std::cout << "<" << this->_name << "> Use Laser Blade(Melee Attack) *PIIOOOUUU " << "<"
+		std::cout << "<" << this->_name << "> Used Laser Blade(Melee Attack) *SLAAAAASH* " << "<"
 		<< target << "> got hit *BAM*" << std::endl << "{<" << target
 		<< "> recieved " << this->_meleeAttackDamage - this->_armorDamageReduction<< " damage points}"<<std::endl;
 	}
@@ -105,7 +107,7 @@ void	FragTrap::beRepaired(unsigned int amount)
 		this->_hitPoint += amount;
 		if (this->_hitPoint > this->_maxHitPoints)
 			this->_hitPoint = this->_maxHitPoints;
-		std::cout << "<"<<this->_name<<">  got healed"<< this->_hitPoint<<" HP left!"<<std::endl;
+		std::cout << "<"<<this->_name<<">  got healed "<< this->_hitPoint<<" HP left!"<<std::endl;
 	}
 
 	if (this->_energyPoints == this->_maxEnergyPoints)
@@ -117,7 +119,7 @@ void	FragTrap::beRepaired(unsigned int amount)
 		this->_energyPoints += amount;
 		if (this->_energyPoints > this->_maxEnergyPoints)
 			this->_energyPoints = this->_maxEnergyPoints;
-		std::cout << "<"<<this->_name<<">  got restored"<< this->_energyPoints<<" EP left!"<<std::endl;
+		std::cout << "<"<<this->_name<<">  got restored "<< this->_energyPoints<<" EP left!"<<std::endl;
 	}
 }
 
@@ -139,7 +141,7 @@ void FragTrap::vaulthunter_dot_exe(std::string const & target)
 	this->_energyPoints -= 25;
 	std::cout << "< "<<this->_name<<"> Used " << FragTrap::_vaulthunterQuotes[std::rand() % 5]<< "<"
 	<< target << "> got hit *VROOOUUUUMMMMM*" << std::endl << "{<" << target
-	<< "> recieved " << this->_rangedAttackDamage - this->_armorDamageReduction << " damage points}"<<std::endl;
+	<< "> recieved " << 50 - this->_armorDamageReduction << " damage points}"<<std::endl;
 
 }
 

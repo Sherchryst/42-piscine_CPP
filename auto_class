@@ -30,6 +30,7 @@ else
 	printf "\t\t$1(void);\n\n" >> $NAME;
 	printf "\t\t$1($1 const & src);\n" >> $NAME;
 	printf "\t\t~$1(void);\n\n" >> $NAME;
+	printf "\t\t$1 &\toperator=(const $1 &rhs);\n\n" >> $NAME;
 	printf "\n\tprivate:\n\n" >> $NAME;
 	printf "};\n" >> $NAME;
 	printf "\n\n#endif" >> $NAME;

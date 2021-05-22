@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 00:23:01 by sgah              #+#    #+#             */
-/*   Updated: 2021/05/22 18:54:22 by sgah             ###   ########.fr       */
+/*   Updated: 2021/05/22 18:56:40 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,10 +59,10 @@ int main(void)
 	for (int i = 0; i < 7; i++)
 		n.beRepaired(20);
 
-	n.ninjaShoebox(n);
 	n.ninjaShoebox(ft);
 	n.ninjaShoebox(st);
 
 	ClapTrap t(10, 10, 10, 10, 1,"Pony", 10, 10, 10);
 	n.ninjaShoebox(t);
+	n.ninjaShoebox(n);
 }

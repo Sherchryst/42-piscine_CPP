@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 20:22:23 by sgah              #+#    #+#             */
-/*   Updated: 2021/05/22 14:25:03 by sgah             ###   ########.fr       */
+/*   Updated: 2021/05/22 15:25:03 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,11 @@ ScavTrap::ScavTrap(std::string Name) :
 	std::cout<<"<"<<this->_name<<"> You shall not pass!"<<std::endl;
 }
 
-ScavTrap::ScavTrap(ScavTrap const & src)
+ScavTrap::ScavTrap(const ScavTrap &rhs):
+	_hit(rhs._hit), _maxHit(rhs._maxHit), _energy(rhs._energy), _maxEnergy(rhs._maxEnergy),
+	_level(rhs._level), _name(rhs._name), _melee(rhs._melee), _ranged(rhs._ranged),
+	_armor(rhs._armor)
 {
-	*this = src;
 	std::cout<<"<"<<this->_name<<"> You shall not pass!"<<std::endl;
 }
 
@@ -31,6 +33,7 @@ ScavTrap::~ScavTrap(void)
 	std::cout<<"<"<< this->_name <<"> I can't afford to die; I'd lose too much money."
 	<<std::endl;
 }
+
 
 int	ScavTrap::getEP(void) const
 {

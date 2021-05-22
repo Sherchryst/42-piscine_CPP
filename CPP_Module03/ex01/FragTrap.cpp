@@ -6,7 +6,7 @@
 /*   By: sgah <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 15:29:32 by sgah              #+#    #+#             */
-/*   Updated: 2021/05/22 14:22:02 by sgah             ###   ########.fr       */
+/*   Updated: 2021/05/22 16:22:16 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ void	FragTrap::rangedAttack(std::string const & target)
 		this->_energyPoints -= 30;
 		std::cout << "<" << this->_name << "> Used Mega Blaster(Ranged Attack) *PIIOOOUUU* " << "<"
 		<< target << "> got shoot *BOOM*" << std::endl << "{<" << target
-		<< "> recieved " << this->_rangedAttackDamage - this->_armorDamageReduction << " damage points}"<<std::endl;
+		<< "> recieved " << this->_rangedAttackDamage - 3 << " damage points}"<<std::endl;
 	}
 	else
 		std::cout << "You out of Energy!"<<std::endl;
@@ -74,7 +74,7 @@ void	FragTrap::meleeAttack(std::string const & target)
 		this->_energyPoints -= 20;
 		std::cout << "<" << this->_name << "> Used Laser Blade(Melee Attack) *SLAAAAASH* " << "<"
 		<< target << "> got hit *BAM*" << std::endl << "{<" << target
-		<< "> recieved " << this->_meleeAttackDamage - this->_armorDamageReduction<< " damage points}"<<std::endl;
+		<< "> recieved " << this->_meleeAttackDamage - 3<< " damage points}"<<std::endl;
 	}
 	else
 		std::cout<<"You out of Energy"<<std::endl;

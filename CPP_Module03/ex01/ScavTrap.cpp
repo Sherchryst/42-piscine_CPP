@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 20:22:23 by sgah              #+#    #+#             */
-/*   Updated: 2021/05/21 21:29:17 by sgah             ###   ########.fr       */
+/*   Updated: 2021/05/22 14:25:03 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,27 @@ ScavTrap::~ScavTrap(void)
 	std::cout<<"<"<< this->_name <<"> I can't afford to die; I'd lose too much money."
 	<<std::endl;
 }
+
+int	ScavTrap::getEP(void) const
+{
+	return this->_energy;
+}
+
+int	ScavTrap::getHP(void) const
+{
+	return this->_hit;
+}
+
+void	ScavTrap::levelUp(void)
+{
+	this->_level++;
+}
+
+std::string	ScavTrap::getName(void) const
+{
+	return this->_name;
+}
+
 
 void	ScavTrap::rangedAttack(std::string const & target)
 {
@@ -113,5 +134,5 @@ void	ScavTrap::challengeNewcomer(std::string const & target)
 {
 	std::cout << "<"<<this->_name<<"> " << ScavTrap::_chall[std::rand() % 5]
 		<< std::endl;
-	std::cout << "<"<<target<<"> *ignore the Challenged*" << target << std::endl;
+	std::cout << "<"<<target<<"> *ignored the Challenge*" << std::endl;
 }

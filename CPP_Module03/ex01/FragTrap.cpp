@@ -6,7 +6,7 @@
 /*   By: sgah <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 15:29:32 by sgah              #+#    #+#             */
-/*   Updated: 2021/05/21 20:18:55 by sgah             ###   ########.fr       */
+/*   Updated: 2021/05/22 14:22:02 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -141,7 +141,7 @@ void FragTrap::vaulthunter_dot_exe(std::string const & target)
 	this->_energyPoints -= 25;
 	std::cout << "< "<<this->_name<<"> Used " << FragTrap::_vaulthunterQuotes[std::rand() % 5]<< "<"
 	<< target << "> got hit *VROOOUUUUMMMMM*" << std::endl << "{<" << target
-	<< "> recieved " << 50 - this->_armorDamageReduction << " damage points}"<<std::endl;
+	<< "> recieved " << 50 - 3 << " damage points}"<<std::endl;
 
 }
 

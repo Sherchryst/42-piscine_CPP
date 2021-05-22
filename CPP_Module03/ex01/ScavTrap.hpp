@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 20:22:23 by sgah              #+#    #+#             */
-/*   Updated: 2021/05/21 21:30:01 by sgah             ###   ########.fr       */
+/*   Updated: 2021/05/22 14:19:40 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,20 @@ class ScavTrap {
 		ScavTrap(ScavTrap const & src);
 		~ScavTrap(void);
 
-		ScavTrap &	operator=(const ScavTrap &rhs);
 		
-		void	challengeNewcomer(std::string const & target);
+		int	getHP(void) const;
+		int	getEP(void) const;
+
+		std::string	getName(void) const;
+
+		void	levelUp(void);
 
 		void	rangedAttack(std::string const & target);
 		void	meleeAttack(std::string const & target);
 		void	takeDamage(unsigned int amount);
 		void	beRepaired(unsigned int amount);
+
+		void	challengeNewcomer(std::string const & target);
 
 	private:
 		int	_hit;

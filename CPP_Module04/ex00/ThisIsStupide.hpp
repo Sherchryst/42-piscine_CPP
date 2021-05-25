@@ -1,42 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Victim.hpp                                         :+:      :+:    :+:   */
+/*   ThisIsStupide.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/25 20:44:24 by sgah              #+#    #+#             */
-/*   Updated: 2021/05/25 23:25:18 by sgah             ###   ########.fr       */
+/*   Created: 2021/05/25 23:14:17 by sgah              #+#    #+#             */
+/*   Updated: 2021/05/25 23:19:51 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef VICTIM_H
-# define VICTIM_H
+#ifndef THISISSTUPIDE_H
+# define THISISSTUPIDE_H
 
 # include <iostream>
+# include "Victim.hpp"
 
-class Victim {
+class ThisIsStupide : public Victim{
 
 	public:
 
-		Victim(std::string name);
+		ThisIsStupide(std::string name);
 
-		Victim(Victim const & src);
-		~Victim(void);
+		ThisIsStupide(ThisIsStupide const & src);
+		~ThisIsStupide(void);
 
-		Victim &	operator=(const Victim &rhs);
+		ThisIsStupide &	operator=(const ThisIsStupide &rhs);
 
-		std::string     getName(void)const;
+		void	getPolymorphed(void)const;
 
-		void	intro(void)const;
-		virtual void	getPolymorphed(void)const;
+	private:
+		ThisIsStupide(void);
 
-
-	protected:
-
-		std::string	_name;
 };
 
-std::ostream &  operator<<(std::ostream & o, Victim const &rhs);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: sgah <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:51:07 by sgah              #+#    #+#             */
-/*   Updated: 2021/05/26 18:13:33 by sgah             ###   ########.fr       */
+/*   Updated: 2021/05/26 22:25:15 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define CHARACTER_H
 
 # include <iostream>
+# include "Enemy.hpp"
+# include "AWeapon.hpp"
 
 class Character {
 
@@ -31,6 +33,8 @@ class Character {
 		void	attack(Enemy* nmy);
 
 		std::string const &	getName(void) const;
+		int	getAP(void)const;
+		AWeapon*	getWP(void)const;
 
 	private:
 
@@ -40,5 +44,6 @@ class Character {
 
 };
 
+std::ostream &  operator<<(std::ostream & o, Character const &rhs);
 
 #endif

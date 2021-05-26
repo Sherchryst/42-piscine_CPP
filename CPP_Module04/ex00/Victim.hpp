@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 20:44:24 by sgah              #+#    #+#             */
-/*   Updated: 2021/05/25 23:25:18 by sgah             ###   ########.fr       */
+/*   Updated: 2021/05/26 02:37:23 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,9 @@ class Victim {
 	protected:
 
 		std::string	_name;
+	private:
+		
+		Victim(void);
 };
 
 std::ostream &  operator<<(std::ostream & o, Victim const &rhs);

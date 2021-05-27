@@ -6,7 +6,7 @@
 /*   By: sgah <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:21:02 by sgah              #+#    #+#             */
-/*   Updated: 2021/05/26 17:37:47 by sgah             ###   ########.fr       */
+/*   Updated: 2021/05/27 13:13:26 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Enemy::Enemy(Enemy const & src): _hp(src._hp), _type(src._type) {}
 
 Enemy::~Enemy(void) {}
 
-std::string const &	Enemy::getType(void) const
+std::string const	Enemy::getType(void) const
 {
 	return this->_type;
 }

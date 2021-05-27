@@ -6,7 +6,7 @@
 /*   By: sgah <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:21:02 by sgah              #+#    #+#             */
-/*   Updated: 2021/05/26 17:36:41 by sgah             ###   ########.fr       */
+/*   Updated: 2021/05/27 13:11:30 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,14 @@ class Enemy {
 
 		Enemy &	operator=(const Enemy &rhs);
 		
-		std::string const &	getType(void) const;
+		std::string const	getType(void) const;
 		int					getHP(void) const;
 
 		virtual void		takeDamage(int dmg);
 
 	protected:
 				int					_hp;
-				std::string const &	_type;
+				std::string const	_type;
 
 };
 

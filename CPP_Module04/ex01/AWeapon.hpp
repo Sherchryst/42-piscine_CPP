@@ -6,7 +6,7 @@
 /*   By: sgah <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 15:23:05 by sgah              #+#    #+#             */
-/*   Updated: 2021/05/26 17:24:05 by sgah             ###   ########.fr       */
+/*   Updated: 2021/05/27 13:11:05 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class AWeapon {
 		AWeapon(AWeapon const & src);
 		virtual ~AWeapon(void);
 
-		std::string const & getName(void) const;
+		std::string const	getName(void) const;
 		int getAPCost(void) const;
 		int getDamage(void) const;
 
@@ -35,7 +35,7 @@ class AWeapon {
 
 	protected:
 		
-		std::string const &	_name;
+		std::string const	_name;
 		int					_cost;
 		int					_dmg;
 

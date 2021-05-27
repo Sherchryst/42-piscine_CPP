@@ -6,7 +6,7 @@
 /*   By: sgah <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:51:07 by sgah              #+#    #+#             */
-/*   Updated: 2021/05/26 22:26:48 by sgah             ###   ########.fr       */
+/*   Updated: 2021/05/27 13:12:56 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ Character::Character(Character const & src): _name(src._name), _ap(src._ap), _wp
 
 Character::~Character(void) {}
 
-std::string const &	Character::getName(void)const
+std::string const	Character::getName(void)const
 {
 	return this->_name;
 }
@@ -71,7 +71,7 @@ std::ostream &	operator<<(std::ostream & o, Character const &rhs)
 {
 	if(rhs.getWP())
 		o << rhs.getName() <<" has "<< rhs.getAP()
-		<<" AP and wields a "<< rhs.getWP()->getName() <<std::endl;
+		<<" AP and wields a "<< (rhs.getWP())->getName() <<std::endl;
 	else
 		o << rhs.getName() <<" has "<< rhs.getAP()
 		<<" AP and  is unarmed"<<std::endl;

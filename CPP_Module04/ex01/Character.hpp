@@ -6,7 +6,7 @@
 /*   By: sgah <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:51:07 by sgah              #+#    #+#             */
-/*   Updated: 2021/05/26 22:25:15 by sgah             ###   ########.fr       */
+/*   Updated: 2021/05/27 13:10:33 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,13 +32,13 @@ class Character {
 		void	equip(AWeapon* wp);
 		void	attack(Enemy* nmy);
 
-		std::string const &	getName(void) const;
+		std::string const	getName(void) const;
 		int	getAP(void)const;
 		AWeapon*	getWP(void)const;
 
 	private:
 
-		std::string const &	_name;
+		std::string const	_name;
 		int					_ap;
 		AWeapon*			_wp;
 

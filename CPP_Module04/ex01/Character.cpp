@@ -6,7 +6,7 @@
 /*   By: sgah <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 17:51:07 by sgah              #+#    #+#             */
-/*   Updated: 2021/05/27 13:12:56 by sgah             ###   ########.fr       */
+/*   Updated: 2021/05/27 13:29:38 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	Character::recoverAP(void)
 
 void	Character::attack(Enemy* nmy)
 {
-	if(this->_wp)
+	if(this->_wp && nmy)
 		if (this->_ap > this->_wp->getAPCost())
 		{
 			std::cout<< this->_name <<" attacks "<< nmy->getType()

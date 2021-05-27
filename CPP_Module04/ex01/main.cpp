@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 22:27:04 by sgah              #+#    #+#             */
-/*   Updated: 2021/05/27 13:25:43 by sgah             ###   ########.fr       */
+/*   Updated: 2021/05/27 13:30:59 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,6 @@ int main(void)
 	std::cout << *player;
 	player->attack(scorpion);
 	std::cout << *player;
-	player->recoverAP();
-	player->attack(scorpion);
 	player->attack(scorpion);
 	std::cout << *player;
 	std::cout << "-- Player is now resting... --" << std::endl;
@@ -52,12 +50,11 @@ int main(void)
 	player->attack(mutant);
 	player->attack(mutant);
 	std::cout << *player;
-	std::cout << "-- The player has no energy left, he escapes. --" << std::endl;
+	std::cout << "-- The player Win. --" << std::endl;
 
 	delete pr;
 	delete pf;
 	delete player;
-	delete mutant;
 	return (0);
 }
 

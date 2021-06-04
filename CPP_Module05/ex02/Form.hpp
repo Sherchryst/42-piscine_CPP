@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/04 17:02:36 by sgah              #+#    #+#             */
-/*   Updated: 2021/06/04 20:49:42 by sgah             ###   ########.fr       */
+/*   Updated: 2021/06/04 22:57:59 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class Form;
 class Form {
 
 	public:
-		Form(std::string const & Name, int rgs, int rge);
+		Form(std::string const & Name, int rgs, int rge, std::string const & Target);
 
 		Form(Form const & src);
 		~Form(void);
@@ -29,6 +29,7 @@ class Form {
 		void				beSigned(Bureaucrat const & employe);
 
 		std::string const &	getName(void) const;
+		std::string const &	getTarget(void) const;
 		bool				isSigned(void) const;
 		int					getRequiredGradeToSigned(void) const;
 		int					getRequiredGradeToExecute(void) const;
@@ -47,14 +48,15 @@ class Form {
 				const char	*what(void) const throw();
 		};
 
-	protected:
+	private:
+		Form(void);
+
 		std::string const	_name;
 		bool				_signed;
 		int const			_rgs;
 		int const			_rge;
+		std::string const	_target;
 
-	private:
-		Form(void);
 };
 
 std::ostream &	operator<<(std::ostream & o, Form const &rhs);

@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/04 20:41:36 by sgah              #+#    #+#             */
-/*   Updated: 2021/06/04 20:59:32 by sgah             ###   ########.fr       */
+/*   Updated: 2021/06/04 22:57:59 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class ShrubberyCreationForm: public Form {
 
 	public:
 
-		ShrubberyCreationForm(void);
+		ShrubberyCreationForm(std::string const & Target);
 
 		ShrubberyCreationForm(ShrubberyCreationForm const & src);
 		~ShrubberyCreationForm(void);

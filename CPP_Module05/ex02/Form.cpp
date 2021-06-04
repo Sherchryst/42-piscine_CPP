@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/04 17:02:36 by sgah              #+#    #+#             */
-/*   Updated: 2021/06/04 19:27:23 by sgah             ###   ########.fr       */
+/*   Updated: 2021/06/04 22:46:06 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
  *                           CONSTRUCTEUR
  *========================================================================**/
 
-Form::Form(std::string const & Name, int rgs, int rge):
-	_name(Name), _signed(false), _rgs(rgs), _rge(rge)
+Form::Form(std::string const & Name, int rgs, int rge, std::string const & Target):
+	_name(Name), _signed(false), _rgs(rgs), _rge(rge), _target(Target)
 {
 	if (rgs > 150)
 		throw GradeTooLowException();
@@ -31,7 +31,8 @@ Form::Form(std::string const & Name, int rgs, int rge):
 }
 
 Form::Form(Form const & src):
-	_name(src._name), _signed(src._signed), _rgs(src._rgs), _rge(src._rge){}
+	_name(src._name), _signed(src._signed),
+	_rgs(src._rgs), _rge(src._rge), _target(src._target){}
 
 /**========================================================================
  *                           DESTRUCTEUR
@@ -60,6 +61,11 @@ void				Form::beSigned(Bureaucrat const & employe)
 std::string const &	Form::getName(void) const
 {
 	return (this->_name);
+}
+
+std::string const &	Form::getTarget(void) const
+{
+	return (this->_target);
 }
 
 bool				Form::isSigned(void) const

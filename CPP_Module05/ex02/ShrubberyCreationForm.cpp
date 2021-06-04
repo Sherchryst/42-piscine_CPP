@@ -6,18 +6,20 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/04 20:41:36 by sgah              #+#    #+#             */
-/*   Updated: 2021/06/04 21:00:40 by sgah             ###   ########.fr       */
+/*   Updated: 2021/06/04 23:04:31 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
+#include <fstream>
+#include <sstream>
 
 /**========================================================================
  *                           CONSTRUCTEUR
  *========================================================================**/
 
-ShrubberyCreationForm::ShrubberyCreationForm(void):
-	Form("ShrubberyCreationForm", 145, 137){}
+ShrubberyCreationForm::ShrubberyCreationForm(std::string const & Target):
+	Form("ShrubberyCreationForm", 145, 137, Target){}
 
 ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const & src):
 	Form(src){}
@@ -32,3 +34,34 @@ ShrubberyCreationForm::~ShrubberyCreationForm(void) {}
  *                           FONCTION MEMBRE
  *========================================================================**/
 
+void	ShrubberyCreationForm::execute(Bureaucrat const & executor) const
+{
+	if (executor.getGrade() <= this->getRequiredGradeToExecute())
+		this->Creation(this->getTarget());
+	else
+		throw GradeTooLowException();
+}
+
+void	ShrubberyCreationForm::Creation(std::string const & target) const
+{
+	std::ofstream ofs(("<" + target + ">_shrubbery").c_str());
+	std::stringstream buff;
+
+	for (int i = 0; i < 5; i++)
+	{
+		for (int i = 1; i <= 10; i++)
+		{
+			for (int j = 0; j < 10 - i; j++)
+				buff << " ";
+			for (int j = 0; j < (i * 2 - 1); j++)
+				buff << "*";
+			buff << std::endl;
+		}
+		for (int i = 1; i <= 3; i++)
+			buff << "        @@@" << std::endl;
+		buff << std::endl;
+	}
+
+	ofs << buff.str();
+	ofs.close();
+}

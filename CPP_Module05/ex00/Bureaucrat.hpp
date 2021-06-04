@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/04 13:44:14 by sgah              #+#    #+#             */
-/*   Updated: 2021/06/04 16:05:50 by sgah             ###   ########.fr       */
+/*   Updated: 2021/06/04 17:01:59 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,12 @@ class Bureaucrat {
 
 		class GradeTooHighException: public std::exception {
 			public:
-				const char		*what(void) const throw();
+				const char	*what(void) const throw();
 		};
 
 		class GradeTooLowException: public std::exception {
 			public:
-				const char		*what(void) const throw();
+				const char	*what(void) const throw();
 		};
 
 	private:

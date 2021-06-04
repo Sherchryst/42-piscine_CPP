@@ -6,14 +6,14 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/04 13:44:14 by sgah              #+#    #+#             */
-/*   Updated: 2021/06/04 16:12:30 by sgah             ###   ########.fr       */
+/*   Updated: 2021/06/04 16:58:46 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
 /**========================================================================
- **                            Constructeur
+ *                             CONSTRUCTEUR
  *========================================================================**/
 
 Bureaucrat::Bureaucrat(std::string const & Name, int Grade):
@@ -26,13 +26,13 @@ Bureaucrat::Bureaucrat(Bureaucrat const & src):
 	_name(src._name), _grade(src._grade) {}
 
 /**========================================================================
- **                            Destructeur
+ *                             DESTRUCTEUR
  *========================================================================**/
 
 Bureaucrat::~Bureaucrat(void) {}
 
 /**========================================================================
- **                            Fonction membre
+ *                             FONCTION MEMBRE
  *========================================================================**/
 
 std::string const &	Bureaucrat::getName(void) const
@@ -66,7 +66,7 @@ void				Bureaucrat::decGrade(void)
 }
 
 /**========================================================================
- **                            Overload operator
+ *                             OVERLOAD OPERATOR
  *========================================================================**/
 
 std::ostream &		operator<<(std::ostream & o, Bureaucrat const &rhs)
@@ -77,19 +77,19 @@ std::ostream &		operator<<(std::ostream & o, Bureaucrat const &rhs)
 }
 
 /**========================================================================
- **                            Exeception
+ *                             EXCEPTION
  *========================================================================**/
 
 typedef Bureaucrat::GradeTooHighException GradeTooHighException;
 
-const char				*GradeTooHighException::what(void) const throw()
+const char			*GradeTooHighException::what(void) const throw()
 {
 	return ("invalid grade: Bureaucrat grade is too high");
 }
 
 typedef Bureaucrat::GradeTooLowException GradeTooLowException;
 
-const char				*GradeTooLowException::what(void) const throw()
+const char			*GradeTooLowException::what(void) const throw()
 {
 	return ("invalid grade: Bureaucrat grade is too low");
 }

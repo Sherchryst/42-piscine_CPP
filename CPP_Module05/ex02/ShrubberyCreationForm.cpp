@@ -6,18 +6,29 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/04 20:41:36 by sgah              #+#    #+#             */
-/*   Updated: 2021/06/04 20:41:36 by sgah             ###   ########.fr       */
+/*   Updated: 2021/06/04 21:00:40 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm(void) {}
+/**========================================================================
+ *                           CONSTRUCTEUR
+ *========================================================================**/
 
-ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const & src)
-{
-	*this = src;
-}
+ShrubberyCreationForm::ShrubberyCreationForm(void):
+	Form("ShrubberyCreationForm", 145, 137){}
+
+ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const & src):
+	Form(src){}
+
+/**========================================================================
+ *                           DESTRUCTEUR
+ *========================================================================**/
 
 ShrubberyCreationForm::~ShrubberyCreationForm(void) {}
+
+/**========================================================================
+ *                           FONCTION MEMBRE
+ *========================================================================**/
 

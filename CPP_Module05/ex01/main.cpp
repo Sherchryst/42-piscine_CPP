@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/04 15:57:20 by sgah              #+#    #+#             */
-/*   Updated: 2021/06/04 19:30:01 by sgah             ###   ########.fr       */
+/*   Updated: 2021/06/04 20:19:53 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,7 +112,7 @@ int main(void)
 	}
 
 	std::cout << f1 << std::endl;
-	b.setGrade(1);
+	b.setGrade(42);
 	std::cout << std::endl << b << std::endl;
 
 		std::cout << " * Bureaucrat with high grade try to sign" << std::endl;

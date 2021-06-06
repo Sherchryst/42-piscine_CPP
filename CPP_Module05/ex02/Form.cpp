@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/04 17:02:36 by sgah              #+#    #+#             */
-/*   Updated: 2021/06/06 20:36:35 by sgah             ###   ########.fr       */
+/*   Updated: 2021/06/07 01:42:29 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,7 @@ int					Form::getRequiredGradeToExecute(void) const
 
 Form &				Form::operator=(const Form &rhs)
 {
+	(void)rhs;
 	return (*this);
 }
 

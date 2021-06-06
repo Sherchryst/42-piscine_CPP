@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/06 20:52:25 by sgah              #+#    #+#             */
-/*   Updated: 2021/06/06 21:00:07 by sgah             ###   ########.fr       */
+/*   Updated: 2021/06/07 01:50:42 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ PresidentialPardonForm::~PresidentialPardonForm(void) {}
 
 PresidentialPardonForm &	PresidentialPardonForm::operator=(PresidentialPardonForm const &rhs)
 {
+	(void)rhs;
 	return (*this);
 }
 
@@ -56,6 +57,6 @@ void						PresidentialPardonForm::execute(Bureaucrat const & executor) const
 	else
 	{
 		executor.executeForm(*this);
-		std::cout<<"<"<< this->getTarget() <<"> was pardon by Zafod Beeblebrox.";
+		std::cout<<"<"<< this->getTarget() <<"> was pardon by Zafod Beeblebrox."<<std::endl;
 	}
 }

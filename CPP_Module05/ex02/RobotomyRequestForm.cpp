@@ -6,11 +6,12 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/06 20:25:52 by sgah              #+#    #+#             */
-/*   Updated: 2021/06/06 20:57:14 by sgah             ###   ########.fr       */
+/*   Updated: 2021/06/07 01:55:08 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
+#include <cstdlib>
 
 /**------------------------------------------------------------------------
  *                           CONSTRUCTEUR
@@ -34,6 +35,7 @@ RobotomyRequestForm::~RobotomyRequestForm(void) {}
 
 RobotomyRequestForm &	RobotomyRequestForm::operator=(RobotomyRequestForm const &rhs)
 {
+	(void)rhs;
 	return (*this);
 }
 
@@ -56,8 +58,8 @@ void					RobotomyRequestForm::execute(Bureaucrat const & executor) const
 	else
 	{
 		executor.executeForm(*this);
-		if (std::rand() % 2 == 0)
-			std::cout << this->getTarget() << " has been robotomized";
+		if ((std::rand() % 2) == 1)
+			std::cout << this->getTarget() << " *BZZZZZZZZZZZZ* has been robotomized"<<std::endl;
 		else
 			std::cout << this->getTarget() << " could not be robotomized";
 	}

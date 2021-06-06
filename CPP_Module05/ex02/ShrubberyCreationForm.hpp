@@ -6,12 +6,14 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/04 20:41:36 by sgah              #+#    #+#             */
-/*   Updated: 2021/06/04 22:57:59 by sgah             ###   ########.fr       */
+/*   Updated: 2021/06/06 20:07:50 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SHRUBBERYCREATIONFORM_H
 # define SHRUBBERYCREATIONFORM_H
+
+class ShrubberyCreationForm;
 
 # include <iostream>
 # include "Form.hpp"

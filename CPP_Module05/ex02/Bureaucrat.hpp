@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/04 13:44:14 by sgah              #+#    #+#             */
-/*   Updated: 2021/06/04 18:59:21 by sgah             ###   ########.fr       */
+/*   Updated: 2021/06/06 19:47:44 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ class Bureaucrat {
 		std::string const &	getName(void) const;
 		int					getGrade(void) const;
 		void				signForm(Form const & Form) const;
+		void				executeForm(Form const & Form) const;
 
 		void				setGrade(int Grade);
 		void				incGrade(void);

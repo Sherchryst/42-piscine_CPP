@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/04 17:02:36 by sgah              #+#    #+#             */
-/*   Updated: 2021/06/04 22:46:06 by sgah             ###   ########.fr       */
+/*   Updated: 2021/06/06 19:52:26 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,6 +113,13 @@ typedef Form::GradeTooLowException GradeTooLowException;
 const char			*GradeTooLowException::what(void) const throw()
 {
 	return ("invalid grade: grade is too low");
+}
+
+typedef Form::NotSignedException NotSignedException;
+
+const char			*NotSignedException::what(void) const throw()
+{
+	return ("invalid status: Form is not signed");
 }
 
 /*========================================================================*/

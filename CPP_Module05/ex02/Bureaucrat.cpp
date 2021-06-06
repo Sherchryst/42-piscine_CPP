@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/04 13:44:14 by sgah              #+#    #+#             */
-/*   Updated: 2021/06/04 19:00:59 by sgah             ###   ########.fr       */
+/*   Updated: 2021/06/06 19:59:58 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,17 @@ void				Bureaucrat::signForm(Form const & Form) const
 	}
 	else
 		std::cout<<"<"<< this->_name <<"> can't sign <"<< Form.getName() <<"> ";
+}
+
+void				Bureaucrat::executeForm(Form const & Form) const
+{
+	if (Form.isSigned() && Form.getRequiredGradeToExecute() >= this->_grade)
+	{
+		std::cout<<"<"<< this->_name <<"> executs <"
+		<< Form.getName() <<">."<<std::endl;
+	}
+	else
+		std::cout<<"<"<< this->_name <<"> can't executs <"<< Form.getName() <<"> ";
 }
 
 void				Bureaucrat::setGrade(int Grade)

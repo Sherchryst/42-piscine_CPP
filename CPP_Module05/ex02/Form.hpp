@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/04 17:02:36 by sgah              #+#    #+#             */
-/*   Updated: 2021/06/04 22:57:59 by sgah             ###   ########.fr       */
+/*   Updated: 2021/06/06 19:52:33 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,11 @@ class Form {
 		};
 
 		class GradeTooLowException: public std::exception {
+			public:
+				const char	*what(void) const throw();
+		};
+
+		class NotSignedException: public std::exception {
 			public:
 				const char	*what(void) const throw();
 		};

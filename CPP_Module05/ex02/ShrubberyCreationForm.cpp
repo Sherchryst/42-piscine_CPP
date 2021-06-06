@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/04 20:41:36 by sgah              #+#    #+#             */
-/*   Updated: 2021/06/04 23:04:31 by sgah             ###   ########.fr       */
+/*   Updated: 2021/06/06 20:10:30 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,21 @@ ShrubberyCreationForm::~ShrubberyCreationForm(void) {}
 
 void	ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
-	if (executor.getGrade() <= this->getRequiredGradeToExecute())
-		this->Creation(this->getTarget());
-	else
+	if (executor.getGrade() > this->getRequiredGradeToExecute())
+	{
+		executor.executeForm(*this);
 		throw GradeTooLowException();
+	}
+	else if (this->isSigned() == false)
+	{
+		executor.executeForm(*this);
+		throw NotSignedException();
+	}
+	else
+	{
+		executor.executeForm(*this);
+		this->Creation(this->getTarget());
+	}
 }
 
 void	ShrubberyCreationForm::Creation(std::string const & target) const

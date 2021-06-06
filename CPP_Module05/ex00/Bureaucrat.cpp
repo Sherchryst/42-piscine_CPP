@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/04 13:44:14 by sgah              #+#    #+#             */
-/*   Updated: 2021/06/04 18:24:02 by sgah             ###   ########.fr       */
+/*   Updated: 2021/06/06 20:35:52 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,13 @@ void				Bureaucrat::decGrade(void)
 /**========================================================================
  *                             OVERLOAD OPERATOR
  *========================================================================**/
+
+Bureaucrat &				Bureaucrat::operator=(const Bureaucrat &rhs)
+{
+	this->_grade = rhs.getGrade();
+
+	return (*this);
+}
 
 std::ostream &		operator<<(std::ostream & o, Bureaucrat const &rhs)
 {

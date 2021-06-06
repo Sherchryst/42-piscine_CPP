@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/04 20:41:36 by sgah              #+#    #+#             */
-/*   Updated: 2021/06/06 20:10:30 by sgah             ###   ########.fr       */
+/*   Updated: 2021/06/06 20:44:15 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,15 @@ ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const & src):
  *========================================================================**/
 
 ShrubberyCreationForm::~ShrubberyCreationForm(void) {}
+
+/**========================================================================
+ *                           OVERLOAD OPERATEUR
+ *========================================================================**/
+
+ShrubberyCreationForm &	ShrubberyCreationForm::operator=(ShrubberyCreationForm const &rhs)
+{
+	return (*this);
+}
 
 /**========================================================================
  *                           FONCTION MEMBRE
@@ -76,3 +85,5 @@ void	ShrubberyCreationForm::Creation(std::string const & target) const
 	ofs << buff.str();
 	ofs.close();
 }
+
+/*------------------------------------------------------------------------*/

@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/04 17:02:36 by sgah              #+#    #+#             */
-/*   Updated: 2021/06/04 19:27:23 by sgah             ###   ########.fr       */
+/*   Updated: 2021/06/06 20:34:21 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,11 @@ int					Form::getRequiredGradeToExecute(void) const
 /**========================================================================
  *                           OVERLOAD OPERATOR
  *========================================================================**/
+
+Form &				Form::operator=(const Form &rhs)
+{
+	return (*this);
+}
 
 std::ostream &		operator<<(std::ostream & o, Form const &rhs)
 {

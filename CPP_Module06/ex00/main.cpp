@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 18:05:55 by sgah              #+#    #+#             */
-/*   Updated: 2021/06/09 00:01:40 by sgah             ###   ########.fr       */
+/*   Updated: 2021/06/09 00:20:08 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include <iostream>
 #include <string>
 #include <cctype>
+#include <sstream>
 #include <math.h>
 #include <climits>
 
@@ -25,20 +26,22 @@ int main(int ac, char **av)
 		return (0);
 	}
 
+	std::string	str;
 	double		k;
+	int			strStart(0);
+	int			strSize(0);
 
-	try
+	while (av[1][strStart] && std::isspace(av[1][strStart]))
+		strStart++;
+	while (av[1][strStart + strSize] && !std::isspace(av[1][strStart + strSize]))
+		strSize++;
+	str = std::string(av[1], strStart, strSize);
+	if (str.length() == 1 && std::isprint(str[0]) && !std::isdigit(str[0]))
+		k = str[0];
+	else
 	{
-		k = atof(av[1]);
-	}
-	catch (std::exception &e)
-	{
-		std::cout << "No conversion found!" << std::endl;
-		std::cout << "char:   impossible" << std::endl;
-		std::cout << "int:    impossible" << std::endl;
-		std::cout << "float:  impossible" << std::endl;
-		std::cout << "double: impossible" << std::endl;
-		return (0);
+		std::istringstream ss(str);
+		ss >> k;
 	}
 
 /**========================================================================

@@ -6,14 +6,16 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 18:05:55 by sgah              #+#    #+#             */
-/*   Updated: 2021/06/08 19:12:12 by sgah             ###   ########.fr       */
+/*   Updated: 2021/06/09 00:01:40 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <math.h>
 #include <cfloat>
-#include <sstream>
+#include <iostream>
+#include <string>
+#include <cctype>
+#include <math.h>
+#include <climits>
 
 int main(int ac, char **av)
 {
@@ -23,20 +25,62 @@ int main(int ac, char **av)
 		return (0);
 	}
 
-	std::string s = av[1];
+	double		k;
 
-	long double res;
-	res = std::strtod(av[1], NULL);
+	try
+	{
+		k = atof(av[1]);
+	}
+	catch (std::exception &e)
+	{
+		std::cout << "No conversion found!" << std::endl;
+		std::cout << "char:   impossible" << std::endl;
+		std::cout << "int:    impossible" << std::endl;
+		std::cout << "float:  impossible" << std::endl;
+		std::cout << "double: impossible" << std::endl;
+		return (0);
+	}
 
-	if(isnan(res) || isinf(res) || res < CHAR_MIN || res > CHAR_MAX)
-		std::cout<<"char: impossible"<<std::endl;
-	else if(std::isprint(static_cast<char>(res)))
-		std::cout<<"char: "<< static_cast<char>(res) <<std::endl;
+/**========================================================================
+ *                           CONVERT CHAR
+ *========================================================================**/
+	std::cout << "char:   ";
+	if (k < CHAR_MIN || k > CHAR_MAX || isnan(k))
+		std::cout << "impossible" << std::endl;
+	else if (std::isprint(k))
+		std::cout << static_cast<unsigned char>(k) << std::endl;
 	else
-		std::cout<<"char: not printable"<<std::endl;
+		std::cout << "non displayable" << std::endl;
 
-	if(isnan(res) || isinf(res) || res < INT_MIN || res > INT_MAX)
-		std::cout<<"int: impossible"<<std::endl;
+/**========================================================================
+ *                           CONVERT INT
+ *========================================================================**/
+	std::cout << "int:    ";
+	if (k >= INT_MIN && k <= INT_MAX && !isnan(k) && !isinf(k))
+		std::cout << static_cast<int>(k) << std::endl;
 	else
-		std::cout<<"int: "<< static_cast<int>(res) <<std::endl;
+		std::cout << "impossible " << std::endl;
+
+/**========================================================================
+ *                           CONVERT FLOAT
+ *========================================================================**/
+	std::cout << "float:  ";
+	if (isnan(k))
+		std::cout << "nan";
+	else if (isinf(k))
+		std::cout << (k < 0 ? "-" : "") << "inf";
+	else
+		std::cout << static_cast<float>(k);
+	std::cout << "f" << std::endl;
+
+/**========================================================================
+ *                           CONVERT DOUBLE
+ *========================================================================**/
+	std::cout << "double: ";
+	if (isnan(k))
+		std::cout << "nan" << std::endl;
+	else if (isinf(k))
+		std::cout << (k < 0 ? "-" : "") << "inf" << std::endl;
+	else
+		std::cout << k << std::endl;
 }

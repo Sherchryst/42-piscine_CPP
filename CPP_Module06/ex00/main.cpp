@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 18:05:55 by sgah              #+#    #+#             */
-/*   Updated: 2021/06/09 00:20:08 by sgah             ###   ########.fr       */
+/*   Updated: 2021/06/09 00:32:38 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,7 @@ int main(int ac, char **av)
 	if (str.length() == 1 && std::isprint(str[0]) && !std::isdigit(str[0]))
 		k = str[0];
 	else
-	{
-		std::istringstream ss(str);
-		ss >> k;
-	}
+		k = atof(str.c_str());
 
 /**========================================================================
  *                           CONVERT CHAR

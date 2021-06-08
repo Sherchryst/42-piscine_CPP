@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 18:05:55 by sgah              #+#    #+#             */
-/*   Updated: 2021/06/09 00:32:38 by sgah             ###   ########.fr       */
+/*   Updated: 2021/06/09 00:35:23 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,14 @@ int main(int ac, char **av)
 
 	std::string	str;
 	double		k;
-	int			strStart(0);
-	int			strSize(0);
+	int			first(0);
+	int			last(0);
 
-	while (av[1][strStart] && std::isspace(av[1][strStart]))
-		strStart++;
-	while (av[1][strStart + strSize] && !std::isspace(av[1][strStart + strSize]))
-		strSize++;
-	str = std::string(av[1], strStart, strSize);
+	while (av[1][first] && std::isspace(av[1][first]))
+		first++;
+	while (av[1][first + last] && !std::isspace(av[1][first + last]))
+		last++;
+	str = std::string(av[1], first, last);
 	if (str.length() == 1 && std::isprint(str[0]) && !std::isdigit(str[0]))
 		k = str[0];
 	else

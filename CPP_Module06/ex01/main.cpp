@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/09 14:48:13 by sgah              #+#    #+#             */
-/*   Updated: 2021/06/09 22:53:53 by sgah             ###   ########.fr       */
+/*   Updated: 2021/06/09 22:55:30 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ void	*serialize(void)
 
 	for (size_t i = 8 + sizeof(int); i < 16 + sizeof(int); i++)
 		res[i] = alnum[std::rand() % 62];
+
 	return (res);
 }
 

@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/09 14:48:13 by sgah              #+#    #+#             */
-/*   Updated: 2021/06/09 22:29:34 by sgah             ###   ########.fr       */
+/*   Updated: 2021/06/09 22:53:53 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,12 @@ void	*serialize(void)
 
 	char		*res = new char[16 + sizeof(int)];
 
-	for (int i = 0; i < 8; i++)
+	for (size_t i = 0; i < 8; i++)
 		res[i] = alnum[std::rand() % 62];
 
 	*reinterpret_cast<int*>(res + 8) = std::rand();
 
-	for (int i = 8 + sizeof(int); (unsigned int)i < 16 + sizeof(int); i++)
+	for (size_t i = 8 + sizeof(int); i < 16 + sizeof(int); i++)
 		res[i] = alnum[std::rand() % 62];
 	return (res);
 }

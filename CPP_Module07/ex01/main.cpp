@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/10 16:20:34 by sgah              #+#    #+#             */
-/*   Updated: 2021/06/10 18:46:33 by sgah             ###   ########.fr       */
+/*   Updated: 2021/06/10 18:48:47 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ int main(void)
 	for (unsigned long i = 0; i < sizeof(in) / sizeof(int); i++)
 		std::cout<< in[i] << " ";
 	std::cout<<std::endl;
-
 
 	char T[] = "abcdefghijklmnopqrstuvwxyz";
 

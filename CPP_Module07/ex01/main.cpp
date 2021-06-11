@@ -6,13 +6,13 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/10 16:20:34 by sgah              #+#    #+#             */
-/*   Updated: 2021/06/10 18:48:47 by sgah             ###   ########.fr       */
+/*   Updated: 2021/06/11 10:50:39 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "iter.hpp"
+#include "whatever.hpp"
 #include <iostream>
-#include <array>
 
 void top(int &c)
 {
@@ -36,6 +36,9 @@ int main(void)
 	char T[] = "abcdefghijklmnopqrstuvwxyz";
 
 	iter(T, sizeof(T) / sizeof(char), &top);
+	std::cout<< T <<std::endl;
+
+	iter(T, sizeof(T) / sizeof(char), &bottom);
 	std::cout<< T <<std::endl;
 	return (0);
 }

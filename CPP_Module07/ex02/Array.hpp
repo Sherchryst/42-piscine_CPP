@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/11 11:04:08 by sgah              #+#    #+#             */
-/*   Updated: 2021/06/13 16:44:24 by sgah             ###   ########.fr       */
+/*   Updated: 2021/06/14 19:53:58 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,14 @@ template <typename T> class Array {
 			return (*this);
 		}
 
-		T &operator[](int i) const
+		T &operator[](int i)
+		{
+			if (!this->array || i < 0 || (unsigned int)i >= this->n)
+				throw std::exception();
+			return this->array[i];
+		}
+
+		T const &operator[](int i) const
 		{
 			if (!this->array || i < 0 || (unsigned int)i >= this->n)
 				throw std::exception();

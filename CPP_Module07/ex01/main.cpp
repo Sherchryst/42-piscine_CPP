@@ -14,6 +14,32 @@
 #include "whatever.hpp"
 #include <iostream>
 
+class A
+{
+	private:
+		int _n;
+	public:
+		A(int n = 0) : _n(n)
+		{};
+		int getN(void) const
+		{
+			return (_n);
+		};
+		bool operator>(const A &other)
+		{
+			return (_n > other._n);
+		};
+		bool operator<(const A &other)
+		{
+			return (_n < other._n);
+		};
+};
+
+void show(A &s)
+{
+	std::cout << s.getN() << " ";
+}
+
 void top(int &c)
 {
 	c++;
@@ -40,5 +66,11 @@ int main(void)
 
 	iter(T, sizeof(T) / sizeof(char), &bottom);
 	std::cout<< T <<std::endl;
+
+	A list3[3];
+	list3[0] = A(21);
+	list3[1] = A(42);
+	list3[2] = A(-42);
+	iter(list3, 3, &show);
 	return (0);
 }

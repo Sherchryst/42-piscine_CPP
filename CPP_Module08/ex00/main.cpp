@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/15 19:14:50 by sgah              #+#    #+#             */
-/*   Updated: 2021/06/15 19:26:00 by sgah             ###   ########.fr       */
+/*   Updated: 2021/06/16 07:41:00 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,24 @@ int main(void)
 	try
 	{
 		easyfind(lst, 5);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+
+	try
+	{
+		easyfind(lst, 4);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+
+	try
+	{
+		easyfind(lst, 3);
 	}
 	catch(const std::exception& e)
 	{

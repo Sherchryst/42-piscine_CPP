@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/16 08:55:26 by sgah              #+#    #+#             */
-/*   Updated: 2021/06/16 09:31:52 by sgah             ###   ########.fr       */
+/*   Updated: 2021/06/16 09:54:23 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,16 @@ int main(void)
 
 	std::srand(time(0));
 	for (int i = 0; i < n; i++)
-		Sp.addNumber(i);
+		try
+		{
+			Sp.addNumber(std::rand());
+		}
+		catch(const std::exception& e) {}
+
 
 	try
 	{
-		Sp.addNumber(1);
+		Sp.addNumber(0);
 	}
 	catch(const std::exception& e)
 	{
@@ -34,7 +39,7 @@ int main(void)
 
 	try
 	{
-		Sp.addNumber(1);
+		Sp.addNumber(150);
 	}
 	catch(const std::exception& e)
 	{

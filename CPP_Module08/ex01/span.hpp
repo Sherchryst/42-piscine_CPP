@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/15 19:28:31 by sgah              #+#    #+#             */
-/*   Updated: 2021/06/16 08:54:33 by sgah             ###   ########.fr       */
+/*   Updated: 2021/06/16 09:49:06 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,11 @@ class span {
 		int		shortestSpan(void);
 
 	class TooMuchValueException: public std::exception {
+		public:
+			const char	*what(void) const throw();
+	};
+
+	class ValueAlreadyExistException: public std::exception {
 		public:
 			const char	*what(void) const throw();
 	};

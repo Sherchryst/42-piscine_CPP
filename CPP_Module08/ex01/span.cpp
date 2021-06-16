@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/15 19:28:31 by sgah              #+#    #+#             */
-/*   Updated: 2021/06/16 09:19:01 by sgah             ###   ########.fr       */
+/*   Updated: 2021/06/16 09:52:04 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ void		span::addNumber(int n)
 {
 	if(this->_n == this->lst.size())
 		throw TooMuchValueException();
+	if(std::find(this->lst.begin(), this->lst.end(), n) != this->lst.end())
+		throw ValueAlreadyExistException();
 
 	this->lst.push_back(n);
 }
@@ -73,4 +75,11 @@ typedef span::TooMuchValueException TooMuchValueException;
 const char	*TooMuchValueException::what(void) const throw()
 {
 	return ("Too much value");
+}
+
+typedef span::ValueAlreadyExistException ValueAlreadyExistException;
+
+const char	*ValueAlreadyExistException::what(void) const throw()
+{
+	return ("Value already exist");
 }

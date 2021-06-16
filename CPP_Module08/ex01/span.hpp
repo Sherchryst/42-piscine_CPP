@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/15 19:28:31 by sgah              #+#    #+#             */
-/*   Updated: 2021/06/15 19:57:43 by sgah             ###   ########.fr       */
+/*   Updated: 2021/06/16 08:54:33 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <vector>
 # include <exception>
+# include <algorithm>
 
 class span {
 
@@ -28,6 +29,8 @@ class span {
 		span &	operator=(const span &rhs);
 
 		void	addNumber(int n);
+		int		longestSpan(void);
+		int		shortestSpan(void);
 
 	class TooMuchValueException: public std::exception {
 		public:

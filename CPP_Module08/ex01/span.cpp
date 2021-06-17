@@ -6,7 +6,7 @@
 /*   By: sgah <sgah@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/15 19:28:31 by sgah              #+#    #+#             */
-/*   Updated: 2021/06/16 09:52:04 by sgah             ###   ########.fr       */
+/*   Updated: 2021/06/17 11:32:47 by sgah             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,13 +39,13 @@ void		span::addNumber(int n)
 	this->lst.push_back(n);
 }
 
-int			span::shortestSpan(void)
+long			span::shortestSpan(void)
 {
 	if (this->lst.size() <= 1)
 		throw std::exception();
 
-	int	min = INT_MAX;
-	int	diff;
+	long	min = INT_MAX;
+	long	diff;
 
 	std::vector<int> tmp = this->lst;
 	std::sort(tmp.begin(), tmp.end());
@@ -54,7 +54,7 @@ int			span::shortestSpan(void)
 	std::vector<int>::iterator it = tmp.begin() + 1;
 	for (; it != tmp.end(); it++)
 	{
-		diff = std::abs(*it - *prev);
+		diff = std::abs(static_cast<long>(*it) - static_cast<long>(*prev));
 		if (diff < min)
 			min = diff;
 		prev = it;
@@ -63,11 +63,11 @@ int			span::shortestSpan(void)
 	return (min);
 }
 
-int			span::longestSpan(void)
+long		span::longestSpan(void)
 {
 
-	return (*std::max_element(this->lst.begin(), this->lst.end()) -
-			*std::min_element(this->lst.begin(), this->lst.end()));
+	return (static_cast<long>(*std::max_element(this->lst.begin(), this->lst.end())) -
+			static_cast<long>(*std::min_element(this->lst.begin(), this->lst.end())));
 }
 
 typedef span::TooMuchValueException TooMuchValueException;
